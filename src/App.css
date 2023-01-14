@@ -1,38 +1,130 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.btn-container {
+  width: 100%;
   display: flex;
-  flex-direction: column;
+  justify-content: flex-end;
+  margin-bottom: 80px;
+}
+
+.btn-container button {
+  margin-top: 20px;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+  background: none;
+}
+
+.btn-container button svg {
+  margin-left: 5px;
+  animation: rotate 1s infinite linear;
+}
+
+.quote-container {
+  position: relative;
+  max-width: 550px;
+  margin: auto;
+}
+
+.quote-container .quote {
+  padding: 0 0 0 60px;
+  border-left: 4px solid #ffff29;
+  margin-bottom: 25px;
+  font-size: 20px;
+}
+
+.author-container {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
+  margin-left: 40px;
+  padding: 20px;
+  background: transparent;
+  cursor: pointer;
+  transition: all 600ms;
 }
 
-.App-link {
-  color: #61dafb;
+.author-container:hover {
+  color: #fff;
+  background: #3a3a3a;
 }
 
-@keyframes App-logo-spin {
-  from {
+.author-container:hover .author h3 {
+  color: #fff;
+}
+
+.author-container .author h3{
+  color: #3a3a3a;
+  transition: all 600ms;
+}
+
+.author-container .author p {
+  font-size: 15px;
+  color: #909090;
+}
+
+.author-container svg {
+  color: #fff;
+}
+
+.author-name {
+  position: absolute;
+  top: -60px;
+  max-height: 50px;
+  padding: 0 0 0 20px;
+  margin-left: 40px;
+  color: #3a3a3a;
+  overflow: hidden;
+}
+
+.spinner {
+   width: 56px;
+   height: 56px;
+   border-radius: 50%;
+   margin: auto;
+   background: conic-gradient(#0000 10%,#ffff29);
+   -webkit-mask: radial-gradient(farthest-side,#0000 calc(100% - 9px),#000 0);
+   animation: spinner-zp9dbg 1s infinite linear;
+}
+
+@keyframes spinner-zp9dbg {
+   to {
+      transform: rotate(1turn);
+   }
+}
+
+@keyframes rotate {
+  0% {
     transform: rotate(0deg);
   }
-  to {
-    transform: rotate(360deg);
+
+  100% {
+    transform: rotate(365deg);
+  }
+}
+
+@media (max-width: 400px) {
+  .quote-container .quote {
+    padding: 0 0 0 30px;
+    font-size: 17px;
+  }
+
+  .author-name {
+    margin-left: 15px;
+  }
+
+  .author-container {
+    margin-left: 15px;
+  }
+
+  .author-container .author h3 {
+    font-size: 18px;
+  }
+
+  .author-container .author p {
+    font-size: 14px;
+  }
+
+  .spinner {
+    width: 45px;
+    height: 45px;
   }
 }
